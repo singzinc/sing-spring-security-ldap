@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/security 
+			http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+	
+	
+	<!-- permit rule in the system  -->
+	<security:http auto-config="true" use-expressions="true" access-denied-page="/iris_cms/login" >
+
+		<security:intercept-url pattern="/login**" access="permitAll"/>
+		<security:intercept-url pattern="/sessioncontrol" access="permitAll"/>
+		
+		<security:intercept-url pattern="/basic/**" access="isAuthenticated()"/>
+		<security:intercept-url pattern="/loginsuccess" access="isAuthenticated()"/>
+		<security:intercept-url pattern="/**"  access="denyAll" />
+
+		<!-- Login and Logout form -->
+		<security:form-login
+				login-page="/login" 
+				authentication-failure-url="/login?error=true" 
+				default-target-url="/loginsuccess"/>
+			
+		<security:logout 
+				invalidate-session="true" 
+				logout-success-url="/login?logout=true" 
+				logout-url="/logout"
+				/>
+
+		<security:session-management invalid-session-url="/login" >
+	      	<security:concurrency-control max-sessions="10" error-if-maximum-exceeded="false" />
+	    </security:session-management>
+		
+		
+		<security:headers>
+			<security:xss-protection block="true"/>
+			<security:hsts />
+			<!--  
+			<security:content-type-options />
+			-->
+			<security:frame-options />
+		</security:headers>
+		
+		<!-- 
+		<security:csrf/>
+		-->
+		
+		
+	</security:http>
+	
+	<!-- spring session config  --> 
+	<bean id="concurrencyFilter"	class="org.springframework.security.web.session.ConcurrentSessionFilter">
+	  	<property name="sessionRegistry" ref="sessionRegistry" />
+	  	<property name="expiredUrl" value="/login" />
+	</bean>
+	
+	<bean id="sas" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
+		<constructor-arg name="sessionRegistry" ref="sessionRegistry" />
+		<property name="maximumSessions" value="1" />
+		<!-- <property name="expiredUrl" value="/sessioncontrol" /> -->
+	</bean>
+
+	<bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />	
+
+	<!--  login source -->
+	<security:authentication-manager>
+			 
+	        <security:ldap-authentication-provider  
+	        		user-search-filter="(uid={0})"
+	        		user-search-base="ou=users"
+	        		group-search-filter="(uniqueMember={0})"
+	        		group-search-base="ou=groups"
+	        		group-role-attribute="cn"
+	        		role-prefix="ROLE_"
+	        		server-ref="contextSource">
+	        </security:ldap-authentication-provider>
+	</security:authentication-manager>
+
+	
+	 <bean id="contextSource" class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
+        <constructor-arg value="ldap://localhost:10389/o=mojo"/>
+        <property name="userDn" value="uid=admin,ou=system"/>
+        <property name="password" value="secret"/>
+		
+        <property name="baseEnvironmentProperties">
+            <map>
+                <entry key="java.naming.referral">
+                    <value>follow</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>
