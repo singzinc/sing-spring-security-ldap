@@ -1,75 +1,9 @@
 version: 1
 
-dn: dc=singco,dc=intranet,dc=asia
-objectclass: top
-objectclass: domain
-dc: singco
-
-dn: ou=groups,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=asia
-objectClass: organizationalUnit
-objectClass: top
-ou: groups
-
-dn: ou=groups,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
-objectClass: organizationalUnit
-objectClass: top
-ou: groups
-
-dn: cn=shippingstaff C,ou=users,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=a
- sia
-objectclass: organizationalPerson
-objectclass: person
-objectclass: inetOrgPerson
-objectclass: top
-cn: shippingstaff C
-sn: Au
-description: Staff C in shipping dep
-givenname: C
-mail: shipping_staffC@singplayground.com
-manager: 
-uid: shippingstaffC
-userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
- Q==
-
 dn: ou=th,dc=singco,dc=intranet,dc=asia
 objectClass: organizationalUnit
 objectClass: top
 ou: th
-
-dn: cn=IT staff C,ou=users,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
-objectclass: inetOrgPerson
-objectclass: person
-objectclass: organizationalPerson
-objectclass: top
-cn: IT staff C
-sn: Au
-description: Staff C in IT dep
-givenname: C
-mail: itd_staffC@singplayground.com
-manager: 
-uid: itdstaffC
-userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
- Q==
-
-dn: ou=accounting,ou=hk,dc=singco,dc=intranet,dc=asia
-objectClass: organizationalUnit
-objectClass: top
-ou: accounting
-
-dn: ou=hk,dc=singco,dc=intranet,dc=asia
-objectClass: organizationalUnit
-objectClass: top
-ou: hk
-
-dn: ou=users,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
-objectClass: organizationalUnit
-objectClass: top
-ou: users
-
-dn: ou=sales,ou=hk,dc=singco,dc=intranet,dc=asia
-objectClass: organizationalUnit
-objectClass: top
-ou: sales
 
 dn: cn=shippingstaff D,ou=users,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=a
  sia
@@ -140,6 +74,87 @@ uid: itdstaffA
 userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
  Q==
 
+dn: ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: itd
+
+dn: ou=marketing,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: marketing
+
+dn: dc=singco,dc=intranet,dc=asia
+objectclass: top
+objectclass: domain
+dc: singco
+
+dn: ou=groups,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: ou=groups,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: cn=shippingstaff C,ou=users,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=a
+ sia
+objectclass: organizationalPerson
+objectclass: person
+objectclass: inetOrgPerson
+objectclass: top
+cn: shippingstaff C
+sn: Au
+description: Staff C in shipping dep
+givenname: C
+mail: shipping_staffC@singplayground.com
+manager: 
+uid: shippingstaffC
+userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
+ Q==
+
+dn: cn=IT staff C,ou=users,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: top
+cn: IT staff C
+sn: Au
+description: Staff C in IT dep
+givenname: C
+mail: itd_staffC@singplayground.com
+manager: 
+uid: itdstaffC
+userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
+ Q==
+
+dn: ou=accounting,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: accounting
+
+dn: ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: hk
+
+dn: ou=users,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: users
+
+dn: ou=sales,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: sales
+
+dn: ou=ranks,ou=groups,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: ranks
+
 dn: ou=hr,ou=hk,dc=singco,dc=intranet,dc=asia
 objectClass: organizationalUnit
 objectClass: top
@@ -176,16 +191,6 @@ uid: shippingstaffB
 userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
  Q==
 
-dn: ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
-objectClass: organizationalUnit
-objectClass: top
-ou: itd
-
-dn: ou=marketing,ou=hk,dc=singco,dc=intranet,dc=asia
-objectClass: organizationalUnit
-objectClass: top
-ou: marketing
-
 dn: ou=shipping,ou=hk,dc=singco,dc=intranet,dc=asia
 objectClass: organizationalUnit
 objectClass: top
@@ -195,6 +200,13 @@ dn: ou=ph,dc=singco,dc=intranet,dc=asia
 objectClass: organizationalUnit
 objectClass: top
 ou: ph
+
+dn: cn=rank1,ou=ranks,ou=groups,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: rank1
+uniqueMember: cn=IT staff A,ou=users,ou=itd,ou=hk,dc=singco,dc=intranet,dc=a
+ sia
 
 dn: ou=users,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=asia
 objectClass: top

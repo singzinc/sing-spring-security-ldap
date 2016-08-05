@@ -64,8 +64,8 @@
 	</bean>
 
 	<bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />	
-<!--  case one -->
-<!-- 
+	<!--  case one -->
+	<!-- 
 	<security:authentication-manager>
 	        <security:ldap-authentication-provider  
 	        		user-search-filter="(uid={0})"
@@ -73,9 +73,10 @@
 	        		server-ref="contextSource">
 	        </security:ldap-authentication-provider>
 	</security:authentication-manager>
--->
+	-->
 
-<!--  case two -->
+	<!--  case two -->
+	<!--
 	<security:authentication-manager>
 	        <security:ldap-authentication-provider  
 	        		user-search-filter="(&amp;(uid={0})(title=manager))"
@@ -83,6 +84,22 @@
 	        		server-ref="contextSource">
 	        </security:ldap-authentication-provider>
 	</security:authentication-manager>
+	-->
+	<!-- case three -->
+
+	<security:authentication-manager>
+	        <security:ldap-authentication-provider  
+	        		user-search-filter="(uid={0})"
+	        		user-search-base="ou=hk"
+	        		group-search-filter="(uniqueMember={0})"
+	        		group-search-base="ou=ranks,ou=groups,ou=itd,ou=hk"
+	        		group-role-attribute="cn"
+	        		role-prefix="ROLE_"
+	        		server-ref="contextSource">
+	        </security:ldap-authentication-provider>
+	</security:authentication-manager>
+	
+
 
 	<bean id="contextSource" class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
         <constructor-arg value="ldap://localhost:10390/dc=singco,dc=intranet,dc=asia"/>
