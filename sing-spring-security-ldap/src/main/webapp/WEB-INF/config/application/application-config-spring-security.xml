@@ -64,35 +64,39 @@
 	</bean>
 
 	<bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />	
-
-	<!--  login source -->
-	<!-- 
-	<security:authentication-manager erase-credentials="true">
-		<security:authentication-provider ref="customAuthenticationProvider">
-			
-		</security:authentication-provider>
-	</security:authentication-manager>
-	-->
+<!--  case one -->
+<!-- 
 	<security:authentication-manager>
 	        <security:ldap-authentication-provider  
 	        		user-search-filter="(uid={0})"
-	        		user-search-base="ou=users"
-	        		group-search-filter="(uniqueMember={0})"
-	        		group-search-base="ou=groups"
-	        		group-role-attribute="cn"
-	        		role-prefix="ROLE_"
+	        		user-search-base="ou=users,ou=itd,ou=hk"
+	        		server-ref="contextSource">
+	        </security:ldap-authentication-provider>
+	</security:authentication-manager>
+-->
+
+<!--  case two -->
+	<security:authentication-manager>
+	        <security:ldap-authentication-provider  
+	        		user-search-filter="(&amp;(uid={0})(title=manager))"
+	        		user-search-base="ou=hk"
 	        		server-ref="contextSource">
 	        </security:ldap-authentication-provider>
 	</security:authentication-manager>
 
 	<bean id="contextSource" class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
-        <constructor-arg value="ldap://localhost:10389/o=mojo"/>
+        <constructor-arg value="ldap://localhost:10390/dc=singco,dc=intranet,dc=asia"/>
         <property name="userDn" value="uid=admin,ou=system"/>
-        <property name="password" value="secret"/>
+        <property name="password" value="test1234"/>
         <property name="baseEnvironmentProperties">
             <map>
                 <entry key="java.naming.referral">
-                    <value>follow</value>
+	                 <!--  
+	                 A JNDI application uses the Context. 
+	                 environment property to indicate to the service providers how to handle referrals 
+	                 follow, ignore, 
+	                 -->
+                    <value>ignore</value>
                 </entry>
             </map>
         </property>

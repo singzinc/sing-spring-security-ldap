@@ -1,0 +1,203 @@
+version: 1
+
+dn: dc=singco,dc=intranet,dc=asia
+objectclass: top
+objectclass: domain
+dc: singco
+
+dn: ou=groups,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: ou=groups,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: cn=shippingstaff C,ou=users,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=a
+ sia
+objectclass: organizationalPerson
+objectclass: person
+objectclass: inetOrgPerson
+objectclass: top
+cn: shippingstaff C
+sn: Au
+description: Staff C in shipping dep
+givenname: C
+mail: shipping_staffC@singplayground.com
+manager: 
+uid: shippingstaffC
+userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
+ Q==
+
+dn: ou=th,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: th
+
+dn: cn=IT staff C,ou=users,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: top
+cn: IT staff C
+sn: Au
+description: Staff C in IT dep
+givenname: C
+mail: itd_staffC@singplayground.com
+manager: 
+uid: itdstaffC
+userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
+ Q==
+
+dn: ou=accounting,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: accounting
+
+dn: ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: hk
+
+dn: ou=users,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: users
+
+dn: ou=sales,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: sales
+
+dn: cn=shippingstaff D,ou=users,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=a
+ sia
+objectclass: organizationalPerson
+objectclass: person
+objectclass: inetOrgPerson
+objectclass: top
+cn: shippingstaff D
+sn: Wrong
+description: Staff D in shipping dep
+givenname: D
+mail: shipping_staffD@singplayground.com
+manager: 
+uid: shippingstaffD
+userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
+ Q==
+
+dn: cn=shippingstaff A,ou=users,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=a
+ sia
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: top
+cn: shippingstaff A
+sn: lam
+description: Staff A in shipping dep
+givenname: A
+mail: shipping_staff@singplayground.com
+manager: 
+title: manager
+uid: shippingstaffA
+userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
+ Q==
+
+dn: ou=sg,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: sg
+
+dn: cn=IT staff D,ou=users,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: top
+cn: IT staff D
+sn: Wrong
+description: Staff D in IT dep
+givenname: D
+mail: itd_staffD@singplayground.com
+manager: 
+uid: itdstaffD
+userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
+ Q==
+
+dn: cn=IT staff A,ou=users,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectclass: organizationalPerson
+objectclass: person
+objectclass: inetOrgPerson
+objectclass: top
+cn: IT staff A
+sn: lam
+description: Staff A in IT dep
+givenname: A
+mail: itd_staff@singplayground.com
+manager: 
+title: manager
+uid: itdstaffA
+userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
+ Q==
+
+dn: ou=hr,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: hr
+
+dn: cn=IT staff B,ou=users,ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: top
+cn: IT staff B
+sn: Chan
+description: Staff B in IT dep
+givenname: B
+mail: itd_staffB@singplayground.com
+manager: 
+uid: itdstaffB
+userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
+ Q==
+
+dn: cn=shippingstaff B,ou=users,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=a
+ sia
+objectclass: organizationalPerson
+objectclass: person
+objectclass: inetOrgPerson
+objectclass: top
+cn: shippingstaff B
+sn: Chan
+description: Staff B in shipping dep
+givenname: B
+mail: shipping_staffB@singplayground.com
+manager: 
+uid: shippingstaffB
+userpassword:: e3NzaGF9ZTZqZUVGSjh2RVVkQU90d3M2b1RHUlZQdncvWW1Za1lxeGtwbUE9P
+ Q==
+
+dn: ou=itd,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: itd
+
+dn: ou=marketing,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: marketing
+
+dn: ou=shipping,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: shipping
+
+dn: ou=ph,dc=singco,dc=intranet,dc=asia
+objectClass: organizationalUnit
+objectClass: top
+ou: ph
+
+dn: ou=users,ou=shipping,ou=hk,dc=singco,dc=intranet,dc=asia
+objectClass: top
+objectClass: organizationalUnit
+ou: users
+
